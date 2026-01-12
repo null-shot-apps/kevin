@@ -50,7 +50,7 @@ export default function Landing() {
           <div>
             <h3 className="text-xl font-medium mb-2">Stay grounded</h3>
             <p className="text-gray-600 leading-relaxed">
-              Cut through the hype. Focus on what's real and useful.
+              Cut through the hype. Focus on what&apos;s real and useful.
             </p>
           </div>
         </div>
@@ -96,4 +96,6 @@ export default function Landing() {
     </div>
   );
 }
+
+
 
