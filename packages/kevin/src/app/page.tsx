@@ -1,84 +1,99 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-
-const slogans = [
-  "Turn chats into apps",
-  "Prompt. Ship. Repeat.",
-  "Build anything from a chat",
-  "Ideas → Apps, instantly",
-  "From zero to MVP in minutes",
-  "Your cofounder in the command line",
-  "Draft, iterate, deploy",
-  "Ship faster than you can type",
-  "Design in text, deliver in code",
-  "Dream it. Prompt it. Run it.",
-  "Chat-native app building",
-  "From prompt to product",
-  "One prompt, infinite apps",
-  "Stop scaffolding. Start shipping.",
-  "Prototype at the speed of thought",
-  "Make conversations executable"
-];
-
 export default function Landing() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isVisible, setIsVisible] = useState(true);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsVisible(false);
-      setTimeout(() => {
-        setCurrentIndex((prev) => (prev + 1) % slogans.length);
-        setIsVisible(true);
-      }, 400);
-    }, 2800);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <div className="relative h-[100dvh] w-full overflow-hidden bg-black text-white">
-      {/* Enhanced animated aurora background layers */}
-      <div className="absolute inset-0 bg-aurora-layer-1" />
-      <div className="absolute inset-0 bg-aurora-layer-2" />
-      <div className="absolute inset-0 bg-aurora-layer-3" />
-      
-      {/* Floating particles overlay */}
-      <div className="absolute inset-0 bg-particles" />
-      
-      {/* Main content - centered */}
-      <main className="relative z-10 h-full flex flex-col items-center justify-center px-6">
-        <h1 className="text-center text-[clamp(28px,6vw,64px)] font-medium tracking-tight mb-4">
-          Turn Chats into Apps
+    <div className="min-h-screen bg-white text-gray-900">
+      {/* Hero Section */}
+      <section className="max-w-3xl mx-auto px-6 pt-24 pb-16">
+        <h1 className="text-5xl md:text-6xl font-light tracking-tight mb-8 leading-tight">
+          Ideas become clear here.
         </h1>
         
-        {/* Rotating slogans */}
-        <div className="mt-4 h-8 md:h-10 overflow-hidden flex items-center justify-center">
-          <span
-            className={`inline-block text-center text-[clamp(18px,3vw,32px)] font-light transition-all duration-[400ms] ease-in-out ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'
-            }`}
-          >
-            {slogans[currentIndex]}
-          </span>
+        <p className="text-xl md:text-2xl text-gray-600 font-light leading-relaxed mb-12">
+          Tech, crypto, and AI explained without the hype.
+          <br />
+          No noise. No fake excitement.
+          <br />
+          Just clarity, one thought at a time.
+        </p>
+
+        <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+          <p>
+            This is a place for people who want to <strong>understand</strong>, not just consume.
+          </p>
+          <p>
+            Where you see the <em>why</em> before the <em>how</em>.
+          </p>
+          <p>
+            Where you learn what actually matters—and skip the rest.
+          </p>
         </div>
-      </main>
-      
-      {/* Start Prompting arrow pointing left - bottom left */}
-      <div className="absolute left-6 md:left-8 bottom-[5%] z-20 flex items-center gap-3 arrow-point-left">
-        <div className="flex items-center gap-2 text-white/80 font-medium text-sm md:text-base">
-          <svg 
-            className="w-5 h-5 md:w-6 md:h-6 animate-bounce-horizontal" 
-            fill="none" 
-            viewBox="0 0 24 24" 
-            stroke="currentColor"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-          <span>Start prompting</span>
+      </section>
+
+      {/* Philosophy Section */}
+      <section className="max-w-3xl mx-auto px-6 py-16 border-t border-gray-200">
+        <h2 className="text-3xl font-light mb-8">What we believe</h2>
+        
+        <div className="space-y-8">
+          <div>
+            <h3 className="text-xl font-medium mb-2">Stay curious</h3>
+            <p className="text-gray-600 leading-relaxed">
+              Ask questions. Challenge assumptions. Never stop learning.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-medium mb-2">Stay consistent</h3>
+            <p className="text-gray-600 leading-relaxed">
+              Real progress happens slowly. Show up. Build. Repeat.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-medium mb-2">Stay grounded</h3>
+            <p className="text-gray-600 leading-relaxed">
+              Cut through the hype. Focus on what's real and useful.
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Topics Section */}
+      <section className="max-w-3xl mx-auto px-6 py-16 border-t border-gray-200">
+        <h2 className="text-3xl font-light mb-8">What we explore</h2>
+        
+        <div className="grid md:grid-cols-3 gap-8">
+          <div>
+            <h3 className="text-xl font-medium mb-3">Tech</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              How technology shapes our world—and how to use it wisely.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-medium mb-3">Crypto</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Beyond the hype: what blockchain actually does and why it matters.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-medium mb-3">AI</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Understanding artificial intelligence without the fear or fantasy.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="max-w-3xl mx-auto px-6 py-16 border-t border-gray-200">
+        <p className="text-2xl font-light text-gray-700 leading-relaxed">
+          Building, learning, and sharing—one clear thought at a time.
+        </p>
+        <p className="mt-6 text-gray-500">
+          More coming soon.
+        </p>
+      </section>
     </div>
   );
 }
+
